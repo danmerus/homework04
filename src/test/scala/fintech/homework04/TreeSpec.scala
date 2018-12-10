@@ -25,6 +25,14 @@ class TreeSpec extends FlatSpec with Matchers {
     depth(t) shouldEqual 2
   }
   it should "apply depth correctly2" in {
-    depth(t1) shouldEqual 1
+    depth(t1) shouldEqual 0
+  }
+  it should "apply map correctly1" in {
+    def mfunc:Int => Int =  x => x*x
+    max(map(t)(mfunc)) should equal(36)
+  }
+  it should "apply map correctly2" in {
+    def mfunc:Int => Int =  x => x*x
+    max(map(t1)(mfunc)) should equal(4)
   }
 }
